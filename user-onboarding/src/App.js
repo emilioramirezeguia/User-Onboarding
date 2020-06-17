@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Form from "./components/Form.jsx";
 
 function App() {
-  // Here's an empty form for use in state and clean out form after submission
+  // Empty form for use in state and clean out form after submission
   const emptyForm = {
     name: "",
     email: "",
@@ -10,12 +10,10 @@ function App() {
     termsOfService: false
   }
 
-  // Form state
-  const [form, setForm] = useState(emptyForm);
-
   // onChange event handler
   const handleChange = event => {
-    console.log(event);
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
   }
 
   // onSubmit event handle
@@ -23,12 +21,21 @@ function App() {
     console.log(event);
     event.preventDefault();
   }
+
+  // Initial button status
+  const initialButtonStatus = false;
+
+  // Form state
+  const [form, setForm] = useState(emptyForm);
+  // Button state
+  const [buttonStatus, setButtonStatus] = useState(initialButtonStatus)
   return (
     <div>
       <Form
         form={form}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        buttonStatus={buttonStatus}
       />
     </div>
   );
