@@ -4,7 +4,7 @@ function Form(props) {
     const { form, handleChange, handleSubmit, handleCheckbox, buttonStatus } = props;
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Name:&nbsp;
                     <input
@@ -41,7 +41,7 @@ function Form(props) {
                         onChange={handleCheckbox}
                     />
                 </label>
-                <button type="submit" onSubmit={handleSubmit}>Sign Up</button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     )
