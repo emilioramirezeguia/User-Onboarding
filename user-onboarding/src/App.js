@@ -10,10 +10,18 @@ function App() {
     termsOfService: false
   }
 
+  // Empty array that takes in a user object
+  const user = [];
+
   // onChange event handler
   const handleChange = event => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
+  }
+
+  const handleCheckbox = event => {
+    const { name, checked } = event.target;
+    setForm({ ...form, [name]: checked });
   }
 
   // onSubmit event handle
@@ -35,8 +43,12 @@ function App() {
         form={form}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        handleCheckbox={handleCheckbox}
         buttonStatus={buttonStatus}
       />
+      {
+
+      }
     </div>
   );
 }

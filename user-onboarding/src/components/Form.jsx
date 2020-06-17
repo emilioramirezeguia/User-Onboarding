@@ -1,7 +1,7 @@
 import React from "react";
 
 function Form(props) {
-    const { form, handleChange, handleSubmit, buttonStatus } = props;
+    const { form, handleChange, handleSubmit, handleCheckbox, buttonStatus } = props;
     return (
         <div>
             <form>
@@ -37,9 +37,8 @@ function Form(props) {
                     <input
                         type="checkbox"
                         name="termsOfService"
-                        value={form.termsOfService}
-                        checked={true}
-                        onChange={handleChange}
+                        checked={form.termsOfService}
+                        onChange={handleCheckbox}
                     />
                 </label>
                 <button type="submit" onSubmit={handleSubmit}>Sign Up</button>
