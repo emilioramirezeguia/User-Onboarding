@@ -1,7 +1,7 @@
 import React from "react";
 
 function Form(props) {
-    const { name, email, password, termsOfService } = props;
+    const { form, handleChange, handleSubmit } = props;
     return (
         <div>
             <form>
@@ -9,27 +9,28 @@ function Form(props) {
                     Name:&nbsp;
                     <input
                         type="text"
-                        value={name}
+                        value={form.name}
                     />
                 </label>
                 <label>
                     Email:&nbsp;
                     <input
                         type="text"
-                        value={email}
+                        value={form.email}
                     />
                 </label>
                 <label>
                     Password:&nbsp;
                     <input
                         type="text"
-                        value={password}
+                        value={form.password}
                     />
                 </label>
                 <label>
                     Terms of Service:&nbsp;
                     <input
                         type="checkbox"
+                        value={form.termsOfService}
                         checked={true}
                     />
                 </label>
