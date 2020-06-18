@@ -1,10 +1,17 @@
 import React from "react";
 
 function Form(props) {
-    const { form, handleChange, handleSubmit, handleCheckbox, buttonStatus } = props;
+    const { form, handleChange, handleSubmit, handleCheckbox, buttonStatus, errors } = props;
     return (
         <div>
             <form onSubmit={handleSubmit}>
+                <div>
+                    {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
+                    <div>{errors.name}</div>
+                    <div>{errors.email}</div>
+                    <div>{errors.password}</div>
+                    <div>{errors.termsOfService}</div>
+                </div>
                 <label>
                     Name:&nbsp;
                     <input
@@ -26,7 +33,7 @@ function Form(props) {
                 <label>
                     Password:&nbsp;
                     <input
-                        type="text"
+                        type="password"
                         name="password"
                         value={form.password}
                         onChange={handleChange}
@@ -41,7 +48,7 @@ function Form(props) {
                         onChange={handleCheckbox}
                     />
                 </label>
-                <button type="submit">Sign Up</button>
+                <button disabled={buttonStatus}>Sign Up</button>
             </form>
         </div>
     )

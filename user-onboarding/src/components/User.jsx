@@ -1,6 +1,6 @@
 import React from "react";
 
-function Welcome(props) {
+function User(props) {
     const { user } = props;
     return (
         <div>
@@ -9,9 +9,10 @@ function Welcome(props) {
             <div>
                 <p>Email: {user.email}</p>
                 <p>Password: {user.password}</p>
+                <p>Terms of Service: {JSON.stringify(user.termsOfService)}</p>
             </div>
         </div>
     )
 }
 
-export default Welcome;
+export default User;
