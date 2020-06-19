@@ -7,10 +7,10 @@ function Form(props) {
             <form onSubmit={handleSubmit}>
                 <div>
                     {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
-                    <div>{errors.name}</div>
-                    <div>{errors.email}</div>
-                    <div>{errors.password}</div>
-                    <div>{errors.termsOfService}</div>
+                    <div style={{ color: "red" }}>{errors.name}</div>
+                    <div style={{ color: "red" }}>{errors.email}</div>
+                    <div style={{ color: "red" }}>{errors.password}</div>
+                    <div style={{ color: "red" }}>{errors.termsOfService}</div>
                 </div>
                 <label>
                     Name:&nbsp;
