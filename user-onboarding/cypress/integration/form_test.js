@@ -19,4 +19,8 @@ describe("User onboarding flow", function () {
     it("Can type an password", function () {
         cy.get(':nth-child(4) > input')
     })
+
+    it("Accepts a checked terms of service", function () {
+        cy.get(':nth-child(5) > input').check()
+    })
 })
